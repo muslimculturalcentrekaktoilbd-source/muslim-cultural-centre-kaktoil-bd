@@ -31,22 +31,33 @@ footer { text-align:center; padding:15px; background:#0056b3; color:white; }
 
 <section id="about">
 <h2>আমাদের সম্পর্কে</h2>
-<p>Muslim Cultural Centre Kaktoil BD কাকতৈল, কিশোরগঞ্জ এলাকায় সামাজিক কল্যাণ, সচেতনতা এবং সাংস্কৃতিক কার্যক্রমের প্রচারের জন্য কাজ করছে। আমরা মানুষের মধ্যে ঐক্য এবং একে অপরের প্রতি সহমর্মিতা বৃদ্ধি করতে চাই। আমাদের উদ্দেশ্য হলো ধর্মীয় ও সামাজিক উন্নয়নে সকলকে একত্রিত করা।</p>
+<p>
+আমরা Muslim Cultural Centre Kaktoil BD-এ বিশ্বাস করি—একতা, সহমর্মিতা এবং জ্ঞানই মানুষের সবচেয়ে বড় শক্তি।  
+আমাদের উদ্দেশ্য হলো কাকতৈল ও আশেপাশের এলাকায় সামাজিক সচেতনতা, ধর্মীয় মূল্যবোধ এবং সাংস্কৃতিক উদ্দীপনা সৃষ্টি করা। আমরা চাই মানুষ যেন পারস্পরিক বোঝাপড়া, ভালোবাসা ও সহযোগিতার মাধ্যমে একত্রিত হয়।  
+</p>
+<p>আমাদের কাজের মূল লক্ষ্য:  
+<ul>
+<li>সমাজে ধর্মীয় ও সাংস্কৃতিক মিলন ঘটানো</li>
+<li>যুবসমাজকে সঠিক পথে পথপ্রদর্শন করা</li>
+<li>মানুষের মধ্যে সহমর্মিতা, দয়া এবং মানবিক মূল্যবোধ বৃদ্ধি করা</li>
+</ul>
+আমরা বিশ্বাস করি—যেখানে মানুষ একত্রিত হয়, সেখানে সমাজ শক্তিশালী হয়। আমরা আমাদের প্রতিটি কার্যক্রমে এই লক্ষ্যকে জীবন্ত রাখি।
+</p>
 </section>
 
 <section id="committee">
 <h2>আমাদের কমিটি</h2>
 <ul>
-<li>MD. Arif Chowdhury – President</li>
-<li>Turikol Islam Polok – Vice President</li>
-<li>MD. Oleulla – General Secretary</li>
-<li>Jubaidul Islam Laden – Treasurer</li>
-<li>Abu Rayhan Evan – সদস্য</li>
-<li>MD. Mobin – সদস্য</li>
-<li>Shajahan Khan – সদস্য</li>
-<li>Muhammad Ashraful Islam Akib – সদস্য</li>
-<li>MD. Shoriful Islam – সদস্য</li>
-<li>Arifin Bin Shuvo – সদস্য</li>
+<li>MD. Arif Chowdhury – President (যুবদল)</li>
+<li>Turikol Islam Polok – Vice President (এলাকার বাসী)</li>
+<li>MD. Oleulla – General Secretary (প্রবাসী)</li>
+<li>Jubaidul Islam Laden – Treasurer (যুবদল)</li>
+<li>Abu Rayhan Evan – সদস্য (এলাকার বাসী)</li>
+<li>MD. Mobin – সদস্য (প্রবাসী)</li>
+<li>Shajahan Khan – সদস্য (যুবদল)</li>
+<li>Muhammad Ashraful Islam Akib – সদস্য (এলাকার বাসী)</li>
+<li>MD. Shoriful Islam – সদস্য (প্রবাসী)</li>
+<li>Arifin Bin Shuvo – সদস্য (যুবদল)</li>
 </ul>
 </section>
 
@@ -78,6 +89,16 @@ function updateClock() {
 setInterval(updateClock,1000);
 updateClock();
 
+// নামাজের সময় বাংলায় Map
+const prayerNamesBn = {
+    Fajr: "ফজর",
+    Sunrise: "সূর্যোদয়",
+    Dhuhr: "যোহর",
+    Asr: "আসর",
+    Maghrib: "মাগরিব",
+    Isha: "ইশা"
+};
+
 // নামাজের সময় আনা
 async function fetchPrayerTimes() {
     try {
@@ -94,6 +115,7 @@ async function fetchPrayerTimes() {
         let minDiff = Infinity;
 
         for(const [key,value] of Object.entries(timings)){
+            if(!prayerNamesBn[key]) continue; // শুধু নির্বাচিত নামাজ
             const [h,m] = value.split(':').map(Number);
             const prayerTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(),h,m);
             const diff = prayerTime - now;
@@ -119,11 +141,12 @@ async function fetchPrayerTimes() {
         }
 
         for(const [key,value] of Object.entries(timings)){
+            if(!prayerNamesBn[key]) continue; // শুধু নির্বাচিত নামাজ
             const div = document.createElement('div');
             div.className='prayer-card';
             if(key===nextPrayerKey) div.classList.add('next-prayer');
             div.setAttribute('data-key',key);
-            div.innerHTML=`<div>${key}: ${value}</div><div class="countdown"></div>`;
+            div.innerHTML=`<div>${prayerNamesBn[key]}: ${value}</div><div class="countdown"></div>`;
             container.appendChild(div);
         }
         setInterval(updateCountdown,1000);
