@@ -5,57 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muslim Cultural Centre Kaktoil BD</title>
 <style>
-body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:#f5f5f5; 
-    color:#222;
-    margin:0; 
-    padding:0;
-}
+body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f5f5f5; color:#222; margin:0; padding:0; }
 a { text-decoration:none; color:#0b3d91; }
 a:hover { text-decoration:underline; }
 header { background:#0b3d91; color:white; text-align:center; padding:30px; }
 header nav { margin-top:15px; }
-header nav a { margin:0 25px; font-weight:bold; font-size:1.1rem; color:white; }
+header nav a { margin:0 15px; font-weight:bold; font-size:1.1rem; color:white; }
 header nav a:hover { color:#ffdd00; }
-.hero-slide { font-size:2.5rem; font-weight:bold; margin-top:10px; }
+.hero-slide { font-size:2rem; font-weight:bold; margin-top:10px; }
 
 /* Sections */
-section { padding:60px 80px; background:white; max-width:1400px; margin:50px auto; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.08); }
-section h2 { color:#0b3d91; font-size:2.2rem; margin-bottom:25px; border-bottom:2px solid #0b3d91; padding-bottom:10px; }
+section { padding:50px 30px; background:white; max-width:1400px; margin:30px auto; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.08); }
+section h2 { color:#0b3d91; font-size:2rem; margin-bottom:20px; border-bottom:2px solid #0b3d91; padding-bottom:8px; }
 
 /* Committee */
-.committee-container { display:flex; flex-wrap:wrap; gap:30px; justify-content:flex-start; }
-.committee-card { flex:1 1 calc(25% - 30px); background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); text-align:center; transition: transform 0.3s; }
+.committee-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:flex-start; }
+.committee-card { flex:1 1 calc(25% - 20px); background:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); text-align:center; transition: transform 0.3s; }
 .committee-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
-.committee-card img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px; }
-.committee-card h3 { font-size:1.3rem; margin-bottom:10px; color:#0b3d91; }
-.committee-card p { font-size:1.05rem; color:#555; }
+.committee-card img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:12px; }
+.committee-card h3 { font-size:1.2rem; margin-bottom:8px; color:#0b3d91; }
+.committee-card p { font-size:1rem; color:#555; }
 
 /* Prayer Times */
 #prayer { background:#fff4e6; }
-.clock { font-size:2rem; font-weight:bold; margin-bottom:40px; text-align:center; color:#0b3d91; }
-.prayer-card { display:flex; justify-content:space-between; padding:20px 25px; margin-bottom:20px; border-radius:12px; background:#ffe7c0; border-left:5px solid #ff6600; font-size:1.2rem; }
+.clock { font-size:1.8rem; font-weight:bold; margin-bottom:30px; text-align:center; color:#0b3d91; }
+.prayer-card { display:flex; justify-content:space-between; padding:15px 20px; margin-bottom:15px; border-radius:12px; background:#ffe7c0; border-left:5px solid #ff6600; font-size:1.1rem; }
 .next-prayer { border-left-color:#ff0000; font-weight:bold; background:#fff3e6; }
 
 /* Events */
-.event-container { display:flex; flex-wrap:wrap; gap:30px; justify-content:flex-start; }
-.event-card { flex:1 1 calc(45% - 30px); background:#e1f5fe; padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); }
-.event-card img { width:100%; border-radius:10px; margin-bottom:12px; }
+.event-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:flex-start; }
+.event-card { flex:1 1 calc(45% - 20px); background:#e1f5fe; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); }
+.event-card img { width:100%; border-radius:10px; margin-bottom:10px; }
 .event-card h4 { font-size:1.2rem; margin-bottom:6px; }
 .event-card p { font-size:1rem; color:#555; }
 
 /* Contact */
-.contact-card { background:#e0f7fa; padding:25px; margin-bottom:20px; border-radius:12px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
-.contact-card a { font-weight:bold; font-size:1.15rem; }
+.contact-card { background:#e0f7fa; padding:20px; margin-bottom:15px; border-radius:12px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+.contact-card a { font-weight:bold; font-size:1.05rem; }
 
 /* Footer */
-footer { text-align:center; padding:30px; background:#0b3d91; color:white; font-size:1.05rem; }
+footer { text-align:center; padding:25px; background:#0b3d91; color:white; font-size:1rem; }
 
-/* Responsive for Desktop-first */
-@media(max-width:1200px){ .committee-card{ flex:1 1 calc(33% - 30px); } .event-card{ flex:1 1 calc(45% - 30px); } }
-@media(max-width:900px){ .committee-card{ flex:1 1 calc(50% - 20px); } .event-card{ flex:1 1 100%; } }
-@media(max-width:600px){ header nav a{ display:block; margin:10px 0; } .committee-card{ flex:1 1 100%; } .event-card{ flex:1 1 100%; } }
+/* Responsive */
+@media(max-width:1200px){ .committee-card{ flex:1 1 calc(33% - 15px); } .event-card{ flex:1 1 calc(50% - 15px); } }
+@media(max-width:900px){ .committee-card{ flex:1 1 calc(50% - 10px); } .event-card{ flex:1 1 100%; } }
+@media(max-width:600px){ header nav a{ display:block; margin:8px 0; } .committee-card{ flex:1 1 100%; } .event-card{ flex:1 1 100%; } }
 </style>
 </head>
 <body>
@@ -74,7 +68,13 @@ footer { text-align:center; padding:30px; background:#0b3d91; color:white; font-
 <section id="prayer">
 <div class="clock" id="clock">রিয়েল-টাইম: --:--:--</div>
 <h2>নামাজের সময়</h2>
-<div id="prayer-cards"></div>
+<div id="prayer-cards">
+  <div class="prayer-card">ফজর <span>05:12</span></div>
+  <div class="prayer-card">যোহর <span>12:25</span></div>
+  <div class="prayer-card">আসর <span>15:45</span></div>
+  <div class="prayer-card">মাগরিব <span>18:30</span></div>
+  <div class="prayer-card">এশা <span>20:00</span></div>
+</div>
 </section>
 
 <section id="about">
@@ -92,27 +92,79 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 
 <section id="committee">
 <h2>আমাদের কমিটি</h2>
-<p>আমাদের কমিটিতে কাকতৈল ও আশেপাশের এলাকার যুবদল, প্রবাসী এবং স্থানীয় বাসীর প্রতিনিধিরা সক্রিয়ভাবে কাজ করছেন। সবাই একসাথে মিলিত হয়ে সমাজে ইতিবাচক পরিবর্তন আনছে।</p>
+<p>আমাদের কমিটিতে কাকতৈল ও আশেপাশের এলাকার যুবদল, প্রবাসী এবং স্থানীয় বাসীর প্রতিনিধিরা সক্রিয়ভাবে কাজ করছেন।</p>
 <div class="committee-container">
-<!-- Committee Cards (ডেস্কটপে বড়) -->
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="MD. Arif Chowdhury"><h3><a href="https://www.facebook.com/share/1AnNDNNVqJ/" target="_blank">MD. Arif Chowdhury</a></h3><p>President</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Turikol Islam Polok"><h3><a href="https://www.facebook.com/share/18SB6N89Uv/" target="_blank">Turikol Islam Polok</a></h3><p>Vice President</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="MD. Oleulla"><h3><a href="https://www.facebook.com/share/14b9wBxhE9c/" target="_blank">MD. Oleulla</a></h3><p>General Secretary</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Jubaidul Islam Laden"><h3><a href="https://www.facebook.com/share/1AM5rmEQxx/" target="_blank">Jubaidul Islam Laden</a></h3><p>Treasurer</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Abu Rayhan Evan"><h3><a href="https://www.facebook.com/share/18TaXg7JUe/" target="_blank">Abu Rayhan Evan</a></h3><p>সদস্য</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Mahdi Hasan Mobin"><h3><a href="https://www.facebook.com/share/1GyBHwNbkT/" target="_blank">Mahdi Hasan Mobin</a></h3><p>সদস্য</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="MD. Shoriful Islam Shorif"><h3><a href="https://www.facebook.com/share/172UNFhcjz/" target="_blank">MD. Shoriful Islam Shorif</a></h3><p>সদস্য</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Arifin Bin Shuvo"><h3><a href="https://www.facebook.com/share/18TmtyrEPG/" target="_blank">Arifin Bin Shuvo</a></h3><p>সদস্য</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Muhammad Ashraful Islam Akib"><h3><a href="https://www.facebook.com/share/1Fyf4dzjQ9/" target="_blank">Muhammad Ashraful Islam Akib</a></h3><p>সদস্য</p></div>
-<div class="committee-card"><img src="https://via.placeholder.com/120" alt="Shajahan Khan"><h3><a href="https://www.facebook.com/share/1CKRYPT6CZ/" target="_blank">Shajahan Khan</a></h3><p>সদস্য</p></div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="MD. Arif Chowdhury">
+    <h3><a href="https://www.facebook.com/share/1AnNDNNVqJ/" target="_blank">MD. Arif Chowdhury</a></h3>
+    <p>President</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Turikol Islam Polok">
+    <h3><a href="https://www.facebook.com/share/18SB6N89Uv/" target="_blank">Turikol Islam Polok</a></h3>
+    <p>Vice President</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="MD. Oleulla">
+    <h3><a href="https://www.facebook.com/share/14b9wBxhE9c/" target="_blank">MD. Oleulla</a></h3>
+    <p>General Secretary</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Jubaidul Islam Laden">
+    <h3><a href="https://www.facebook.com/share/1AM5rmEQxx/" target="_blank">Jubaidul Islam Laden</a></h3>
+    <p>Treasurer</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Abu Rayhan Evan">
+    <h3><a href="https://www.facebook.com/share/18TaXg7JUe/" target="_blank">Abu Rayhan Evan</a></h3>
+    <p>Member</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Mahdi Hasan Mobin">
+    <h3><a href="https://www.facebook.com/share/1GyBHwNbkT/" target="_blank">Mahdi Hasan Mobin</a></h3>
+    <p>Member</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="MD. Shoriful Islam Shorif">
+    <h3><a href="https://www.facebook.com/share/172UNFhcjz/" target="_blank">MD. Shoriful Islam Shorif</a></h3>
+    <p>Member</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Arifin Bin Shuvo">
+    <h3><a href="https://www.facebook.com/share/18TmtyrEPG/" target="_blank">Arifin Bin Shuvo</a></h3>
+    <p>Member</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Muhammad Ashraful Islam Akib">
+    <h3><a href="https://www.facebook.com/share/1Fyf4dzjQ9/" target="_blank">Muhammad Ashraful Islam Akib</a></h3>
+    <p>Member</p>
+  </div>
+  <div class="committee-card">
+    <img src="https://via.placeholder.com/120" alt="Shajahan Khan">
+    <h3><a href="https://www.facebook.com/share/1CKRYPT6CZ/" target="_blank">Shajahan Khan</a></h3>
+    <p>Member</p>
+  </div>
 </div>
 </section>
 
 <section id="events">
-<h2>Upcoming Events</h2>
+<h2>ইভেন্ট / পোস্ট</h2>
 <div class="event-container">
-<div class="event-card"><img src="https://via.placeholder.com/500x250" alt="Event1"><h4>ঈদ মিলাদ উদযাপন</h4><p>কাকতৈল কমিউনিটি হলে উদযাপন।</p></div>
-<div class="event-card"><img src="https://via.placeholder.com/500x250" alt="Event2"><h4>জুম্মার দোয়া</h4><p>প্রতিটি শুক্রবার বিশেষ দোয়া।</p></div>
+  <div class="event-card">
+    <img src="https://via.placeholder.com/400x200" alt="ঈদ-উল-ফিতর উদযাপন">
+    <h4>ঈদ-উল-ফিতর উদযাপন</h4>
+    <p>মসজিদ প্রাঙ্গণে আয়োজন করা হয়েছে ঈদ উদযাপন।</p>
+  </div>
+  <div class="event-card">
+    <img src="https://via.placeholder.com/400x200" alt="রোজা শিক্ষা কর্মশালা">
+    <h4>রোজা শিক্ষা কর্মশালা</h4>
+    <p>কাকতৈল এলাকায় শিশু ও যুব সমাজের জন্য রোজা শিক্ষা কর্মশালা।</p>
+  </div>
+  <div class="event-card">
+    <img src="https://via.placeholder.com/400x200" alt="সামাজিক সচেতনতা সভা">
+    <h4>সামাজিক সচেতনতা সভা</h4>
+    <p>সামাজিক দায়িত্ব ও নাগরিক সচেতনতা বিষয়ক আলোচনা।</p>
+  </div>
 </div>
 </section>
 
@@ -128,15 +180,21 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 <footer>&copy; 2026 Muslim Cultural Centre Kaktoil BD. সর্বস্বত্ব সংরক্ষিত।</footer>
 
 <script>
-// Hero Slide
+// ================== Real-time Clock ==================
+function updateClock(){ 
+  const now=new Date(); 
+  document.getElementById('clock').textContent=`রিয়েল-টাইম: ${now.toLocaleTimeString('bn-BD',{hour12:false})}`; 
+}
+setInterval(updateClock,1000); updateClock();
+
+// ================== Hero Slide ==================
 const slides = ["Muslim Cultural Centre Kaktoil BD","সমাজে মিলন, ধর্মীয় শিক্ষা ও সাংস্কৃতিক উদ্দীপনা","যোগাযোগ করুন ও আমাদের সাথে যুক্ত হোন"];
 let slideIndex=0;
-function showSlide(){ document.getElementById('heroSlide').textContent=slides[slideIndex]; slideIndex=(slideIndex+1)%slides.length; }
+function showSlide(){ 
+  document.getElementById('heroSlide').textContent=slides[slideIndex]; 
+  slideIndex=(slideIndex+1)%slides.length; 
+}
 setInterval(showSlide,4000);
-
-// Clock
-function updateClock(){ const now=new Date(); document.getElementById('clock').textContent=`রিয়েল-টাইম: ${now.toLocaleTimeString('bn-BD',{hour12:false})}`;}
-setInterval(updateClock,1000); updateClock();
 </script>
 
 </body>
