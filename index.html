@@ -6,61 +6,55 @@
 <title>Muslim Cultural Centre Kaktoil BD</title>
 <style>
 * {margin:0; padding:0; box-sizing:border-box;}
-body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; color:#333; line-height:1.6; scroll-behavior:smooth; transition: background 0.3s, color 0.3s; }
+body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f5f5f5; color:#222; line-height:1.6; scroll-behavior:smooth; }
 a { text-decoration:none; color:#0b3d91; }
 a:hover { text-decoration:underline; }
 button { cursor:pointer; }
 
-/* Dark Mode */
-body.dark-mode { background:#121212; color:#eee; }
-body.dark-mode section { background:#1e1e1e; color:#eee; }
-body.dark-mode .committee-card, body.dark-mode .prayer-card, body.dark-mode .contact-card { background:#2a2a2a; color:#eee; }
-body.dark-mode footer { background:#0b3d91; }
-
-/* Hero Section */
-header { position: relative; color:white; text-align:center; overflow:hidden; }
-header .hero-slide { width:100%; height:350px; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; font-size:2.5rem; font-weight:bold; }
-header nav { margin-top:10px; }
-header nav a { margin:0 15px; font-weight:bold; font-size:1rem; }
+/* Header & Hero */
+header { position: relative; text-align:center; padding:20px; background:#0b3d91; color:white; }
+header nav { margin-top:15px; }
+header nav a { margin:0 15px; font-weight:bold; font-size:1rem; color:white; }
+header nav a:hover { text-decoration:underline; color:#ffdd00; }
+.hero-slide { margin-top:10px; font-size:2rem; font-weight:bold; }
 
 /* Sections */
-section { padding:50px 30px; max-width:1100px; margin:50px auto; background:white; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.1); transition: background 0.3s, color 0.3s; }
+section { padding:50px 30px; max-width:1100px; margin:50px auto; background:white; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.08); }
 section h2 { color:#0b3d91; font-size:2rem; margin-bottom:25px; border-bottom:2px solid #0b3d91; padding-bottom:10px; }
-#about { background: linear-gradient(135deg,#e0f7fa,#b2ebf2); }
+#about { background: #e3f2fd; }
 
-/* Committee Cards */
+/* Committee */
 .committee-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.committee-card { flex:1 1 calc(33% - 20px); background:#e3f2fd; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; text-align:center; }
-.committee-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.committee-card { flex:1 1 calc(33% - 20px); background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.08); text-align:center; transition: transform 0.3s; }
+.committee-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.12); }
 .committee-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:10px; }
 .committee-card h3 { font-size:1.2rem; margin-bottom:5px; color:#0b3d91; }
 .committee-card p { font-size:1rem; color:#555; }
 
-/* Prayer Cards */
-.prayer-card { display:flex; justify-content:space-between; padding:18px 20px; margin-bottom:15px; border-radius:10px; background:#e8f0fe; border-left:5px solid #0b3d91; font-size:1.1rem; transition: background 0.3s, color 0.3s; }
-.next-prayer { border-left-color:#ff6600; background:#fff4e6; font-weight:bold; }
-.clock { font-size:1.3rem; font-weight:bold; margin-bottom:25px; text-align:center; }
+/* Prayer Times */
+#prayer { background:#fff4e6; }
+.clock { font-size:1.5rem; font-weight:bold; margin-bottom:30px; text-align:center; color:#0b3d91; }
+.prayer-card { display:flex; justify-content:space-between; padding:18px 20px; margin-bottom:15px; border-radius:10px; background:#ffe7c0; border-left:5px solid #ff6600; font-size:1.1rem; }
+.next-prayer { background:#fff3e6; border-left-color:#ff0000; font-weight:bold; }
 
 /* Events */
 .event-container { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.event-card { flex:1 1 calc(45% - 20px); background:#fff3e6; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.event-card { flex:1 1 calc(45% - 20px); background:#e1f5fe; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.08); }
 .event-card img { width:100%; border-radius:8px; margin-bottom:10px; }
 .event-card h4 { font-size:1.1rem; margin-bottom:5px; }
 .event-card p { font-size:0.95rem; color:#555; }
-.event-card:hover { transform: translateY(-5px); }
 
-/* Contact Cards */
-.contact-card { background:#e1f5fe; padding:20px; margin-bottom:15px; border-radius:10px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition: background 0.3s, color 0.3s; }
+/* Contact */
+.contact-card { background:#e0f7fa; padding:20px; margin-bottom:15px; border-radius:10px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
 .contact-card a { font-weight:bold; font-size:1.1rem; }
 
 /* Footer */
 footer { text-align:center; padding:25px; background:#0b3d91; color:white; font-size:1rem; }
 
-/* Dark Mode Toggle Button */
-#darkModeToggle { position:fixed; bottom:20px; right:20px; padding:10px 15px; background:#0b3d91; color:white; border:none; border-radius:8px; z-index:999; }
-
-/* Back to Top */
-#backToTop { position:fixed; bottom:80px; right:20px; padding:10px 15px; background:#ff6600; color:white; border:none; border-radius:8px; display:none; z-index:999; }
+/* Dark Mode & Top Button */
+#darkModeToggle, #backToTop { position:fixed; padding:10px 15px; border:none; border-radius:8px; z-index:999; color:white; }
+#darkModeToggle { bottom:20px; right:20px; background:#0b3d91; }
+#backToTop { bottom:80px; right:20px; background:#ff6600; display:none; }
 
 /* Responsive */
 @media(max-width:992px){ .committee-card { flex:1 1 calc(45% - 20px); } .event-card { flex:1 1 100%; } }
@@ -69,7 +63,6 @@ footer { text-align:center; padding:25px; background:#0b3d91; color:white; font-
 </head>
 <body>
 
-<!-- Hero Section -->
 <header>
 <div class="hero-slide" id="heroSlide">Muslim Cultural Centre Kaktoil BD</div>
 <nav>
@@ -81,7 +74,13 @@ footer { text-align:center; padding:25px; background:#0b3d91; color:white; font-
 </nav>
 </header>
 
-<!-- About Section -->
+<!-- Real-time Clock on Top -->
+<section id="prayer">
+<div class="clock" id="clock">রিয়েল-টাইম: --:--:--</div>
+<h2>নামাজের সময়</h2>
+<div id="prayer-cards"></div>
+</section>
+
 <section id="about">
 <h2>আমাদের সম্পর্কে</h2>
 <p>
@@ -95,7 +94,6 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 </ul>
 </section>
 
-<!-- Committee Section -->
 <section id="committee">
 <h2>আমাদের কমিটি</h2>
 <p>আমাদের কমিটিতে কাকতৈল ও আশেপাশের এলাকার যুবদল, প্রবাসী এবং স্থানীয় বাসীর প্রতিনিধিরা সক্রিয়ভাবে কাজ করছেন। সবাই একসাথে মিলিত হয়ে সমাজে ইতিবাচক পরিবর্তন আনছে।</p>
@@ -153,14 +151,6 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 </div>
 </section>
 
-<!-- Prayer Times Section -->
-<section id="prayer">
-<h2>নামাজের সময়</h2>
-<div class="clock" id="clock">রিয়েল-টাইম: --:--:--</div>
-<div id="prayer-cards"></div>
-</section>
-
-<!-- Events Section -->
 <section id="events">
 <h2>Upcoming Events</h2>
 <div class="event-container">
@@ -169,7 +159,6 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact">
 <h2>যোগাযোগ</h2>
 <div class="contact-card">ইমেইল: <a href="mailto:muslimculturalcentrekaktoilbd@gmail.com">muslimculturalcentrekaktoilbd@gmail.com</a></div>
@@ -181,7 +170,6 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 
 <footer>&copy; 2026 Muslim Cultural Centre Kaktoil BD. সর্বস্বত্ব সংরক্ষিত।</footer>
 
-<!-- Dark Mode & Back to Top -->
 <button id="darkModeToggle">Dark Mode</button>
 <button id="backToTop">Top</button>
 
