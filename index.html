@@ -175,7 +175,7 @@ Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস কর�
 <div class="contact-card">ইমেইল: <a href="mailto:muslimculturalcentrekaktoilbd@gmail.com">muslimculturalcentrekaktoilbd@gmail.com</a></div>
 <div class="contact-card">ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61578645890631" target="_blank">আমাদের ফেসবুক পেইজ</a></div>
 <div class="contact-card">
-<iframe src="https://maps.google.com/maps?q=24.4500,90.9667&z=15&output=embed" width="100%" height="250" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+<iframe src="https://maps.google.com/maps?q=24.459567,90.740384&z=15&output=embed" width="100%" height="250" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 </section>
 
@@ -205,7 +205,7 @@ function updateClock(){ const now=new Date(); document.getElementById('clock').t
 setInterval(updateClock,1000); updateClock();
 
 // Prayer Times
-const latitude = 24.4500, longitude = 90.9667;
+const latitude = 24.459567, longitude = 90.740384;
 const prayerNamesBn = {Fajr:"ফজর", Sunrise:"সূর্যোদয়", Dhuhr:"যোহর", Asr:"আসর", Maghrib:"মাগরিব", Isha:"ইশা"};
 async function fetchPrayerTimes(){
 try{
@@ -220,7 +220,7 @@ const diff=prayerTime-now; if(diff>0 && diff<minDiff){minDiff=diff; nextPrayerKe
 function updateCountdown(){ container.querySelectorAll('.prayer-card').forEach(card=>{ const key=card.getAttribute('data-key'); const time=timings[key];
 const [h,m]=time.split(':').map(Number); const prayerTime=new Date(now.getFullYear(),now.getMonth(),now.getDate(),h,m);
 let diff=prayerTime-new Date(); if(diff<0) diff=0; const hours=Math.floor(diff/1000/60/60); const minutes=Math.floor((diff/1000/60)%60); const seconds=Math.floor((diff/1000)%60);
-card.querySelector('.countdown').textContent=`Countdown: ${hours}h ${minutes}m ${seconds}s`; });}
+card.querySelector('.countdown').textContent=`বাকি সময়: ${hours} ঘন্টা ${minutes} মিনিট ${seconds} সেকেন্ড`; });}
 for(const [key,value] of Object.entries(timings)){ if(!prayerNamesBn[key]) continue;
 const div=document.createElement('div'); div.className='prayer-card'; if(key===nextPrayerKey) div.classList.add('next-prayer'); div.setAttribute('data-key',key);
 div.innerHTML=`<div>${prayerNamesBn[key]}: ${value}</div><div class="countdown"></div>`; container.appendChild(div); }
