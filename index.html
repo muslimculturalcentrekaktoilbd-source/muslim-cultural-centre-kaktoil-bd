@@ -5,16 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muslim Cultural Centre Kaktoil BD</title>
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7; color:#333; }
-header { background:#0056b3; color:white; padding:20px; text-align:center; }
-nav a { margin:0 10px; color:white; text-decoration:none; font-weight:bold; }
-section { padding:20px; max-width:900px; margin:auto; background:white; margin-bottom:20px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-h2 { color:#0056b3; }
-footer { text-align:center; padding:15px; background:#0056b3; color:white; }
-.prayer-card { display:flex; justify-content:space-between; padding:10px; margin-bottom:8px; border:1px solid #ddd; border-radius:6px; background:#fafafa;}
-.next-prayer { border-color:#ff6600; background:#fff4e6; font-weight:bold; }
-.clock { font-size:18px; font-weight:bold; margin-bottom:15px; }
-@media(max-width:768px){section{padding:15px;} nav a{display:block; margin:5px 0;} .prayer-card{flex-direction:column;}}
+/* General Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f4f8; color:#333; line-height:1.6; }
+
+/* Hero Section */
+header { position: relative; color:white; text-align:center; }
+header::before {
+  content:""; 
+  background: url('https://images.unsplash.com/photo-1588776814546-03823b05bdf6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vc2FxdWV8ZW58MHx8MHx8&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+  position:absolute; top:0; left:0; width:100%; height:100%; opacity:0.3; z-index:-1;
+}
+header h1 { font-size:2.8rem; padding:60px 20px 40px 20px; }
+nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold; font-size:1.1rem;}
+nav a:hover { text-decoration:underline; }
+
+/* Sections */
+section { padding:50px 30px; max-width:1100px; margin:50px auto; background:white; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.1);}
+section h2 { color:#0b3d91; font-size:2rem; margin-bottom:25px; border-bottom:2px solid #0b3d91; padding-bottom:10px; }
+
+/* About Section Gradient */
+#about { background: linear-gradient(135deg,#e0f7fa,#b2ebf2); }
+
+/* Committee Cards */
+.committee-container { display:flex; flex-wrap:wrap; gap:20px; }
+.committee-card { flex:1 1 calc(33% - 20px); background:#e3f2fd; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; text-align:center; }
+.committee-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.committee-card h3 { font-size:1.2rem; margin-bottom:5px; color:#0b3d91; }
+.committee-card p { font-size:1rem; color:#555; }
+
+/* Prayer Cards */
+.prayer-card { display:flex; justify-content:space-between; padding:18px 20px; margin-bottom:15px; border-radius:10px; background:#e8f0fe; border-left:5px solid #0b3d91; font-size:1.1rem; }
+.next-prayer { border-left-color:#ff6600; background:#fff4e6; font-weight:bold; }
+
+/* Clock */
+.clock { font-size:1.3rem; font-weight:bold; margin-bottom:25px; text-align:center; }
+
+/* Contact Cards */
+.contact-card { background:#e1f5fe; padding:20px; margin-bottom:15px; border-radius:10px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.contact-card a { text-decoration:none; color:#0b3d91; font-weight:bold; font-size:1.1rem;}
+.contact-card a:hover { text-decoration:underline; }
+
+/* Footer */
+footer { text-align:center; padding:25px; background:#0b3d91; color:white; font-size:1rem; }
+
+/* Responsive */
+@media(max-width:992px){ .committee-card { flex:1 1 calc(50% - 20px); } }
+@media(max-width:600px){ .committee-card { flex:1 1 100%; } nav a{display:block; margin:10px 0;} }
 </style>
 </head>
 <body>
@@ -23,6 +60,8 @@ footer { text-align:center; padding:15px; background:#0056b3; color:white; }
 <h1>Muslim Cultural Centre Kaktoil BD</h1>
 <nav>
 <a href="#about">আমাদের সম্পর্কে</a>
+<a href="#committee">কমিটি</a>
+<a href="#prayer">নামাজের সময়</a>
 <a href="#contact">যোগাযোগ</a>
 </nav>
 </header>
@@ -30,34 +69,31 @@ footer { text-align:center; padding:15px; background:#0056b3; color:white; }
 <section id="about">
 <h2>আমাদের সম্পর্কে</h2>
 <p>
-আমরা Muslim Cultural Centre Kaktoil BD-এ বিশ্বাস করি—একতা, সহমর্মিতা এবং জ্ঞানই মানুষের সবচেয়ে বড় শক্তি।  
+Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস করি—একতা, সহমর্মিতা এবং জ্ঞানই মানুষের সবচেয়ে বড় শক্তি।  
 আমাদের উদ্দেশ্য হলো কাকতৈল ও আশেপাশের এলাকায় সামাজিক সচেতনতা, ধর্মীয় মূল্যবোধ এবং সাংস্কৃতিক উদ্দীপনা সৃষ্টি করা। আমরা চাই মানুষ যেন পারস্পরিক বোঝাপড়া, ভালোবাসা ও সহযোগিতার মাধ্যমে একত্রিত হয়।
 </p>
-<p>আমাদের কাজের মূল লক্ষ্য:  
 <ul>
 <li>সমাজে ধর্মীয় ও সাংস্কৃতিক মিলন ঘটানো</li>
 <li>যুবসমাজকে সঠিক পথে পথপ্রদর্শন করা</li>
 <li>মানুষের মধ্যে সহমর্মিতা, দয়া এবং মানবিক মূল্যবোধ বৃদ্ধি করা</li>
 </ul>
-আমরা বিশ্বাস করি—যেখানে মানুষ একত্রিত হয়, সেখানে সমাজ শক্তিশালী হয়। আমরা আমাদের প্রতিটি কার্যক্রমে এই লক্ষ্যকে জীবন্ত রাখি।
-</p>
 </section>
 
 <section id="committee">
 <h2>আমাদের কমিটি</h2>
-<p>আমাদের কমিটিতে কাকতৈল ও আশেপাশের এলাকার যুবদল, প্রবাসী এবং স্থানীয় বাসীর প্রতিনিধিরা সক্রিয়ভাবে কাজ করছেন। সবাই একসাথে মিলিত হয়ে সমাজে ইতিবাচক পরিবর্তন আনতে এবং সাংস্কৃতিক, ধর্মীয় কার্যক্রম পরিচালনা করছে।</p>
-<ul>
-<li>MD. Arif Chowdhury – President</li>
-<li>Turikol Islam Polok – Vice President</li>
-<li>MD. Oleulla – General Secretary</li>
-<li>Jubaidul Islam Laden – Treasurer</li>
-<li>Abu Rayhan Evan – সদস্য</li>
-<li>MD. Mobin – সদস্য</li>
-<li>Shajahan Khan – সদস্য</li>
-<li>Muhammad Ashraful Islam Akib – সদস্য</li>
-<li>MD. Shoriful Islam – সদস্য</li>
-<li>Arifin Bin Shuvo – সদস্য</li>
-</ul>
+<p>আমাদের কমিটিতে কাকতৈল ও আশেপাশের এলাকার যুবদল, প্রবাসী এবং স্থানীয় বাসীর প্রতিনিধিরা সক্রিয়ভাবে কাজ করছেন। সবাই একসাথে মিলিত হয়ে সমাজে ইতিবাচক পরিবর্তন আনছে।</p>
+<div class="committee-container">
+<div class="committee-card"><h3>MD. Arif Chowdhury</h3><p>President</p></div>
+<div class="committee-card"><h3>Turikol Islam Polok</h3><p>Vice President</p></div>
+<div class="committee-card"><h3>MD. Oleulla</h3><p>General Secretary</p></div>
+<div class="committee-card"><h3>Jubaidul Islam Laden</h3><p>Treasurer</p></div>
+<div class="committee-card"><h3>Abu Rayhan Evan</h3><p>সদস্য</p></div>
+<div class="committee-card"><h3>MD. Mobin</h3><p>সদস্য</p></div>
+<div class="committee-card"><h3>Shajahan Khan</h3><p>সদস্য</p></div>
+<div class="committee-card"><h3>Muhammad Ashraful Islam Akib</h3><p>সদস্য</p></div>
+<div class="committee-card"><h3>MD. Shoriful Islam</h3><p>সদস্য</p></div>
+<div class="committee-card"><h3>Arifin Bin Shuvo</h3><p>সদস্য</p></div>
+</div>
 </section>
 
 <section id="prayer">
@@ -68,8 +104,8 @@ footer { text-align:center; padding:15px; background:#0056b3; color:white; }
 
 <section id="contact">
 <h2>যোগাযোগ</h2>
-<p>ইমেইল: <a href="mailto:muslimculturalcentrekaktoilbd@gmail.com">muslimculturalcentrekaktoilbd@gmail.com</a></p>
-<p>ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61578645890631" target="_blank">আমাদের ফেসবুক পেইজ</a></p>
+<div class="contact-card">ইমেইল: <a href="mailto:muslimculturalcentrekaktoilbd@gmail.com">muslimculturalcentrekaktoilbd@gmail.com</a></div>
+<div class="contact-card">ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61578645890631" target="_blank">আমাদের ফেসবুক পেইজ</a></div>
 </section>
 
 <footer>&copy; 2026 Muslim Cultural Centre Kaktoil BD. সর্বস্বত্ব সংরক্ষিত।</footer>
@@ -114,7 +150,7 @@ async function fetchPrayerTimes() {
         let minDiff = Infinity;
 
         for(const [key,value] of Object.entries(timings)){
-            if(!prayerNamesBn[key]) continue; // শুধু নির্বাচিত নামাজ
+            if(!prayerNamesBn[key]) continue;
             const [h,m] = value.split(':').map(Number);
             const prayerTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(),h,m);
             const diff = prayerTime - now;
@@ -140,7 +176,7 @@ async function fetchPrayerTimes() {
         }
 
         for(const [key,value] of Object.entries(timings)){
-            if(!prayerNamesBn[key]) continue; // শুধু নির্বাচিত নামাজ
+            if(!prayerNamesBn[key]) continue;
             const div = document.createElement('div');
             div.className='prayer-card';
             if(key===nextPrayerKey) div.classList.add('next-prayer');
