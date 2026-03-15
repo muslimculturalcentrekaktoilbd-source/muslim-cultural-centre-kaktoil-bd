@@ -1,354 +1,184 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Muslim Cultural Centre Kaktoil</title>
-
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
-
-header{
-background:url("https://images.unsplash.com/photo-1584551246679-0daf3d275d0f") center/cover;
-padding:80px 20px;
-text-align:center;
-}
-
-header h1{
-background:rgba(0,0,0,0.6);
-display:inline-block;
-padding:10px 20px;
-border-radius:10px;
-}
-
-.clock{
-font-size:24px;
-margin-top:10px;
-}
-
-.section{
-padding:40px;
-max-width:1100px;
-margin:auto;
-}
-
-.prayer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-}
-
-.prayer-box{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-.members{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.member{
-background:#1e293b;
-padding:15px;
-border-radius:10px;
-text-align:center;
-}
-
-.member a{
-color:#38bdf8;
-text-decoration:none;
-}
-
-footer{
-background:#020617;
-text-align:center;
-padding:20px;
-}
-
-/* AZAN POPUP */
-
-#azanPopup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:black;
-display:none;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-z-index:999;
-}
-
-.mosque{
-font-size:90px;
-animation:mosqueMove 2s infinite alternate;
-}
-
-@keyframes mosqueMove{
-from{transform:translateY(0)}
-to{transform:translateY(-15px)}
-}
-
-/* HADITH SLIDER */
-
-.hadith{
-background:#1e293b;
-padding:30px;
-border-radius:10px;
-text-align:center;
-font-size:20px;
-}
-
-/* EVENT */
-
-.event{
-background:#1e293b;
-padding:20px;
-margin-bottom:10px;
-border-radius:10px;
-}
-
-/* MUSIC BUTTON */
-
-.musicBtn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#22c55e;
-border:none;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-cursor:pointer;
-}
-
+body{margin:0;font-family:Arial;background:#0f172a;color:white;}
+header{background:url("https://images.unsplash.com/photo-1584551246679-0daf3d275d0f") center/cover;padding:80px 20px;text-align:center;}
+header h1{background:rgba(0,0,0,0.6);display:inline-block;padding:10px 20px;border-radius:10px;}
+.clock{font-size:24px;margin-top:10px;}
+.hijri{font-size:18px;color:#a7f3d0;}
+.section{padding:40px;max-width:1100px;margin:auto;}
+.prayer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;}
+.prayer-box{background:#1e293b;padding:20px;border-radius:10px;text-align:center;transition:0.3s;}
+.prayer-box.active{background:#16a34a;box-shadow:0 0 15px #22c55e;}
+.countdown{font-size:20px;margin-top:20px;color:#22c55e;text-align:center;}
+.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+.member{background:#1e293b;padding:15px;border-radius:10px;text-align:center;}
+.member a{color:#38bdf8;text-decoration:none;}
+footer{background:#020617;text-align:center;padding:20px;}
+#azanPopup{position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:none;align-items:center;justify-content:center;flex-direction:column;z-index:999;}
+.mosque{font-size:90px;animation:mosqueMove 2s infinite alternate;}
+@keyframes mosqueMove{from{transform:translateY(0)}to{transform:translateY(-15px)}}
+.hadith{background:#1e293b;padding:30px;border-radius:10px;text-align:center;font-size:20px;margin-top:20px;}
+.event{background:#1e293b;padding:20px;margin-bottom:10px;border-radius:10px;}
+.musicBtn{position:fixed;bottom:20px;right:20px;background:#22c55e;border:none;padding:15px;border-radius:50%;font-size:20px;cursor:pointer;}
 </style>
-
 </head>
-
 <body>
 
 <header>
-
 <h1>Muslim Cultural Centre Kaktoil</h1>
-
 <div id="clock" class="clock"></div>
-
-<div id="hijri"></div>
-
+<div id="hijri" class="hijri"></div>
 </header>
 
-
 <section class="section">
-
-<h2 style="text-align:center">🕌 আজকের নামাজের সময়</h2>
-
+<h2 style="text-align:center">   </h2>
 <div class="prayer-grid">
-
-<div class="prayer-box">ফজর<br><span id="fajr"></span></div>
-<div class="prayer-box">যোহর<br><span id="dhuhr"></span></div>
-<div class="prayer-box">আসর<br><span id="asr"></span></div>
-<div class="prayer-box">মাগরিব<br><span id="maghrib"></span></div>
-<div class="prayer-box">ইশা<br><span id="isha"></span></div>
-
+<div class="prayer-box" id="fajrBox"><br><span id="fajr"></span></div>
+<div class="prayer-box" id="dhuhrBox"><br><span id="dhuhr"></span></div>
+<div class="prayer-box" id="asrBox"><br><span id="asr"></span></div>
+<div class="prayer-box" id="maghribBox"><br><span id="maghrib"></span></div>
+<div class="prayer-box" id="ishaBox"><br><span id="isha"></span></div>
 </div>
-
+<div id="countdown" class="countdown"></div>
 </section>
 
-
 <section class="section">
-
-<h2 style="text-align:center">🌙 রমজান কাউন্টডাউন</h2>
-
+<h2 style="text-align:center">  </h2>
 <p id="ramadan" style="text-align:center"></p>
-
 <p style="text-align:center">
-সেহরি শেষ: <span id="sehri"></span><br>
-ইফতার: <span id="iftar"></span>
+ : <span id="sehri"></span><br>
+: <span id="iftar"></span>
 </p>
-
 </section>
 
-
 <section class="section">
-
-<h2 style="text-align:center">📜 হাদিস</h2>
-
-<div class="hadith" id="hadithSlider">
-
-"তোমাদের মধ্যে সেই ব্যক্তি উত্তম, যে তার চরিত্রে উত্তম।"
-
-</div>
-
+<h2 style="text-align:center"> </h2>
+<div class="hadith" id="hadithSlider">"    ,    "</div>
 </section>
 
-
 <section class="section">
-
-<h2 style="text-align:center">📅 মসজিদের লাইভ ইভেন্ট</h2>
-
-<div class="event">🕌 জুমার নামাজ — শুক্রবার</div>
-<div class="event">📖 কুরআন শিক্ষা ক্লাস — শনিবার</div>
-<div class="event">🤲 দোয়া মাহফিল — প্রতি মাসে</div>
-
+<h2 style="text-align:center">   </h2>
+<div class="event">    </div>
+<div class="event">     </div>
+<div class="event">     </div>
 </section>
 
-
 <section class="section">
-
-<h2 style="text-align:center">👥 আমাদের সদস্য</h2>
-
+<h2 style="text-align:center">  </h2>
 <div class="members">
-
 <div class="member"><a href="https://www.facebook.com/share/1AnNDNNVqJ/">MD. Arif Chowdhury</a></div>
 <div class="member"><a href="https://www.facebook.com/share/18SB6N89Uv/">Turikol Islam Polok</a></div>
 <div class="member"><a href="https://www.facebook.com/share/14b9wBxhE9c/">MD. Oleulla</a></div>
 <div class="member"><a href="https://www.facebook.com/share/1AM5rmEQxx/">Jubaidul Islam Laden</a></div>
 <div class="member"><a href="https://www.facebook.com/share/18TaXg7JUe/">Abu Rayhan Evan</a></div>
-
 </div>
-
+<p style="text-align:center;margin-top:20px;color:#a7f3d0">,    </p>
 </section>
 
+<section class="section">
+<h2 style="text-align:center"> Facebook Page</h2>
+<p style="text-align:center"><a href="https://facebook.com" target="_blank" style="color:#22c55e;font-size:20px">Muslim Cultural Centre Kaktoil</a></p>
+<p style="text-align:center;color:#a7f3d0">: 24.459717, 90.740450, Kaktoil, Kishoreganj, Bangladesh</p>
+</section>
 
-<footer>
-
-© 2026 Muslim Cultural Centre Kaktoil
-
-</footer>
-
+<footer> 2026 Muslim Cultural Centre Kaktoil</footer>
 
 <div id="azanPopup">
-
-<div class="mosque">🕌</div>
-
-<h1>নামাজের সময় হয়েছে</h1>
-
+<div class="mosque"></div>
+<h1>  </h1>
 </div>
 
-
 <audio id="azan" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/1.mp3"></audio>
-
-<audio id="nasheed" loop
-src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5a4b0e2c3a.mp3"></audio>
-
-<button class="musicBtn" onclick="toggleMusic()">🎵</button>
-
+<audio id="nasheed" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5a4b0e2c3a.mp3"></audio>
+<button class="musicBtn" onclick="toggleMusic()"></button>
 
 <script>
+let prayers=[];
+let nextPrayer="";
+let nextPrayerBox="";
 
 function updateClock(){
-
-const now=new Date();
-
-document.getElementById("clock").innerText=
-now.toLocaleTimeString("en-US",{hour12:true});
-
+    const now=new Date();
+    document.getElementById("clock").innerText=now.toLocaleTimeString("en-US",{hour12:true});
 }
-
 setInterval(updateClock,1000);
 
-
-
 fetch("https://api.aladhan.com/v1/timingsByCity?city=Kishoreganj&country=Bangladesh&method=1")
-
 .then(res=>res.json())
-
 .then(data=>{
+    const t=data.data.timings;
+    document.getElementById("fajr").innerText=t.Fajr;
+    document.getElementById("dhuhr").innerText=t.Dhuhr;
+    document.getElementById("asr").innerText=t.Asr;
+    document.getElementById("maghrib").innerText=t.Maghrib;
+    document.getElementById("isha").innerText=t.Isha;
+    document.getElementById("sehri").innerText=t.Fajr;
+    document.getElementById("iftar").innerText=t.Maghrib;
 
-const t=data.data.timings;
-
-document.getElementById("fajr").innerText=t.Fajr;
-document.getElementById("dhuhr").innerText=t.Dhuhr;
-document.getElementById("asr").innerText=t.Asr;
-document.getElementById("maghrib").innerText=t.Maghrib;
-document.getElementById("isha").innerText=t.Isha;
-
-document.getElementById("sehri").innerText=t.Fajr;
-document.getElementById("iftar").innerText=t.Maghrib;
-
+    prayers=[
+        {name:"",time:t.Fajr,box:"fajrBox"},
+        {name:"",time:t.Dhuhr,box:"dhuhrBox"},
+        {name:"",time:t.Asr,box:"asrBox"},
+        {name:"",time:t.Maghrib,box:"maghribBox"},
+        {name:"",time:t.Isha,box:"ishaBox"}
+    ];
+    highlightNextPrayer();
+    setInterval(highlightNextPrayer,60000);
 });
 
+fetch("https://api.aladhan.com/v1/gToH")
+.then(res=>res.json())
+.then(data=>{
+    const h=data.data.hijri;
+    document.getElementById("hijri").innerText=h.day+" "+h.month.en+" "+h.year+" AH";
+});
 
+function highlightNextPrayer(){
+    const now=new Date();
+    let minDiff=Number.MAX_VALUE;
+    prayers.forEach(p=>{
+        const parts=p.time.split(":");
+        let prayerDate=new Date();
+        prayerDate.setHours(parseInt(parts[0]));
+        prayerDate.setMinutes(parseInt(parts[1]));
+        prayerDate.setSeconds(0);
+        let diff=(prayerDate-now)/1000;
+        if(diff<0) diff+=24*60*60;
+        if(diff<minDiff){minDiff=diff;nextPrayer=p.name;nextPrayerBox=p.box;}
+        document.getElementById(p.box).classList.remove("active");
+    });
+    document.getElementById(nextPrayerBox).classList.add("active");
+    let hours=Math.floor(minDiff/3600);
+    let minutes=Math.floor((minDiff%3600)/60);
+    let seconds=Math.floor(minDiff%60);
+    document.getElementById("countdown").innerText=nextPrayer+"  : "+hours+"  "+minutes+"  "+seconds+" ";
+    if(hours===0 && minutes===0 && seconds<10){
+        document.getElementById("azanPopup").style.display="flex";
+        document.getElementById("azan").play();
+        setTimeout(()=>{document.getElementById("azanPopup").style.display="none";},10000);
+    }
+}
 
 const hadiths=[
-
-"তোমাদের মধ্যে সেই ব্যক্তি উত্তম, যে তার চরিত্রে উত্তম।",
-
-"যে আল্লাহর জন্য ভালোবাসে, আল্লাহর জন্য ঘৃণা করে, সে পূর্ণ ঈমানদার।",
-
-"পরিচ্ছন্নতা ঈমানের অর্ধেক।",
-
-"মানুষের মাঝে উত্তম সেই ব্যক্তি, যে মানুষের উপকার করে।"
-
+"    ,    ",
+"   ,    ,   ",
+"  ",
+"    ,    "
 ];
-
 let i=0;
-
-function hadithSlider(){
-
-i++;
-
-if(i>=hadiths.length) i=0;
-
-document.getElementById("hadithSlider").innerText=hadiths[i];
-
-}
-
+function hadithSlider(){i++; if(i>=hadiths.length)i=0; document.getElementById("hadithSlider").innerText=hadiths[i];}
 setInterval(hadithSlider,5000);
 
-
-
-function toggleMusic(){
-
-let music=document.getElementById("nasheed");
-
-if(music.paused){
-
-music.play();
-
-}else{
-
-music.pause();
-
-}
-
-}
-
-
-
 const ramadanDate=new Date("2026-02-18");
-
-function ramadanCountdown(){
-
-const now=new Date();
-
-const diff=ramadanDate-now;
-
-const days=Math.floor(diff/(1000*60*60*24));
-
-document.getElementById("ramadan").innerText=
-
-"রমজান শুরু হতে বাকি "+days+" দিন";
-
-}
-
+function ramadanCountdown(){const now=new Date();const diff=ramadanDate-now;const days=Math.floor(diff/(1000*60*60*24));document.getElementById("ramadan").innerText="    "+days+" ";}
 setInterval(ramadanCountdown,1000);
 
+function toggleMusic(){let music=document.getElementById("nasheed"); if(music.paused){music.play();}else{music.pause();}}
 </script>
 
 </body>
