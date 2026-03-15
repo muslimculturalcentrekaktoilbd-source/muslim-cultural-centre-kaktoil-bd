@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muslim Cultural Centre Kaktoil</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#0f172a;
+color:white;
+}
+
+header{
+text-align:center;
+padding:30px;
+background:#16a34a;
+}
+
+h1{
+margin:0;
+}
+
+.clock{
+font-size:30px;
+margin-top:10px;
+font-weight:bold;
+}
+
+.section{
+padding:40px;
+text-align:center;
+}
+
+.prayer-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+}
+
+.prayer{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+}
+
+.countdown{
+margin-top:20px;
+font-size:20px;
+color:#22c55e;
+}
+
+.members{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.member{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+}
+
+.member a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:#020617;
+padding:20px;
+text-align:center;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Muslim Cultural Centre Kaktoil</h1>
+
+<div class="clock" id="clock"></div>
+
+</header>
+
+<section class="section">
+
+<h2>🕌 আজকের নামাজের সময়</h2>
+
+<div class="prayer-box">
+
+<div class="prayer">ফজর<br>5:00 AM</div>
+<div class="prayer">যোহর<br>12:15 PM</div>
+<div class="prayer">আসর<br>4:30 PM</div>
+<div class="prayer">মাগরিব<br>6:15 PM</div>
+<div class="prayer">ইশা<br>7:30 PM</div>
+
+</div>
+
+<div class="countdown" id="countdown"></div>
+
+</section>
+
+<section class="section">
+
+<h2>📍 আমাদের লোকেশন</h2>
+
+<p>কাকতৈল, বাংলাদেশ</p>
+
+<a href="https://maps.google.com/?q=24.459567,90.740384" target="_blank">
+Google Map এ দেখুন
+</a>
+
+</section>
+
+<section class="section">
+
+<h2>👥 কমিটির সদস্য</h2>
+
+<div class="members">
+
+<div class="member">
+<a href="https://www.facebook.com/share/1AnNDNNVqJ/" target="_blank">
+MD. Arif Chowdhury
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/18SB6N89Uv/" target="_blank">
+Turikol Islam Polok
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/14b9wBxhE9c/" target="_blank">
+MD. Oleulla
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/1AM5rmEQxx/" target="_blank">
+Jubaidul Islam Laden
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/18TaXg7JUe/" target="_blank">
+Abu Rayhan Evan
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/1GyBHwNbkT/" target="_blank">
+Mahdi Hasan Mobin
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/172UNFhcjz/" target="_blank">
+MD. Shoriful Islam Shorif
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/18TmtyrEPG/" target="_blank">
+Arifin Bin Shuvo
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/1Fyf4dzjQ9/" target="_blank">
+Muhammad Ashraful Islam Akib
+</a>
+</div>
+
+<div class="member">
+<a href="https://www.facebook.com/share/1CKRYPT6CZ/" target="_blank">
+Shajahan Khan
+</a>
+</div>
+
+</div>
+
+<p style="margin-top:30px">
+আমাদের সাথে যুবদল, প্রবাসী ও এলাকাবাসী একসাথে সমাজের উন্নয়নে কাজ করে।
+</p>
+
+</section>
+
+<footer>
+
+© 2026 Muslim Cultural Centre Kaktoil
+
+</footer>
+
+<script>
+
+function updateClock(){
+
+const now=new Date();
+
+const options={
+timeZone:"Asia/Dhaka",
+hour:"numeric",
+minute:"numeric",
+second:"numeric",
+hour12:true
+};
+
+const time=now.toLocaleTimeString("en-US",options);
+
+document.getElementById("clock").innerText=time;
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+</script>
+
+</body>
+</html>
