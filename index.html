@@ -1,139 +1,319 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muslim Cultural Centre Kaktoil BD</title>
-<link rel="stylesheet" href="style.css">
+
+<title>Muslim Cultural Centre Kaktoil</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#065f46;
+padding:30px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:34px;
+}
+
+.clock{
+font-size:26px;
+margin-top:10px;
+}
+
+.hijri{
+margin-top:5px;
+font-size:18px;
+color:#a7f3d0;
+}
+
+.section{
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.prayers{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.prayer{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+font-size:18px;
+}
+
+.countdown{
+text-align:center;
+font-size:20px;
+margin-top:20px;
+color:#22c55e;
+}
+
+.members{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.member{
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.member a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+.posts{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.rules{
+line-height:1.9;
+}
+
+footer{
+background:#020617;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
 </head>
+
 <body>
 
 <header>
-<div class="hero-slide" id="heroSlide">Muslim Cultural Centre Kaktoil BD</div>
-<nav>
-<a href="#about">আমাদের সম্পর্কে</a>
-<a href="#committee">কমিটি</a>
-<a href="#prayer">নামাজের সময়</a>
-<a href="#events">ইভেন্ট</a>
-<a href="#contact">যোগাযোগ</a>
-</nav>
+
+<h1>Muslim Cultural Centre Kaktoil</h1>
+
+<div id="clock" class="clock"></div>
+
+<div id="hijri" class="hijri"></div>
+
 </header>
 
-<section id="prayer">
-<div class="clock" id="clock">রিয়েল-টাইম: --:--:--</div>
-<div id="nextPrayerTime" style="text-align:center; font-weight:bold; margin-bottom:15px; color:#ff0000;"></div>
-<h2>নামাজের সময়</h2>
-<div id="prayer-cards">
-  <div class="prayer-card">ফজর <span>05:12</span></div>
-  <div class="prayer-card">যোহর <span>12:25</span></div>
-  <div class="prayer-card">আসর <span>15:45</span></div>
-  <div class="prayer-card">মাগরিব <span>18:30</span></div>
-  <div class="prayer-card">এশা <span>20:00</span></div>
+<section class="section">
+
+<h2>🕌 আজকের নামাজের সময়</h2>
+
+<div class="prayers">
+
+<div class="prayer">ফজর<br><span id="fajr"></span></div>
+<div class="prayer">যোহর<br><span id="dhuhr"></span></div>
+<div class="prayer">আসর<br><span id="asr"></span></div>
+<div class="prayer">মাগরিব<br><span id="maghrib"></span></div>
+<div class="prayer">ইশা<br><span id="isha"></span></div>
+
 </div>
+
+<div id="countdown" class="countdown"></div>
+
 </section>
 
-<section id="about">
-<h2>আমাদের সম্পর্কে</h2>
-<p>
-Muslim Cultural Centre Kaktoil BD-এ আমরা বিশ্বাস করি—একতা, সহমর্মিতা এবং জ্ঞানই মানুষের সবচেয়ে বড় শক্তি।  
-আমাদের উদ্দেশ্য হলো কাকতৈল ও আশেপাশের এলাকায় সামাজিক সচেতনতা, ধর্মীয় মূল্যবোধ এবং সাংস্কৃতিক উদ্দীপনা সৃষ্টি করা।
+
+<section class="section">
+
+<h2>📍 আমাদের লোকেশন</h2>
+
+<p style="text-align:center">
+
+কাকতৈল, বাংলাদেশ<br>
+
+<a href="https://maps.google.com/?q=24.459567,90.740384" target="_blank" style="color:#22c55e">
+Google Map এ দেখুন
+</a>
+
 </p>
+
+</section>
+
+
+<section class="section">
+
+<h2>🤝 আমাদের উদ্দেশ্য</h2>
+
+<p>
+
+Muslim Cultural Centre Kaktoil একটি সামাজিক ও ইসলামিক সংগঠন।
+আমাদের উদ্দেশ্য হচ্ছে ইসলামের সুন্দর শিক্ষা সমাজে ছড়িয়ে দেওয়া
+এবং মানুষের মধ্যে ভ্রাতৃত্ব, সহযোগিতা ও একতাবদ্ধতা সৃষ্টি করা।
+
+আমরা বিশ্বাস করি একটি সুন্দর সমাজ গড়ে ওঠে তখনই যখন
+মানুষ একে অপরের পাশে দাঁড়ায়। তাই আমরা গরিব ও অসহায়দের
+সহযোগিতা করা, প্রতিবেশীদের পাশে দাঁড়ানো, সামাজিক কাজ করা
+এবং ইসলামের আলো মানুষের মাঝে ছড়িয়ে দেওয়ার জন্য কাজ
+করে যাচ্ছি।
+
+এই উদ্যোগে যুবদল, প্রবাসী ও এলাকাবাসী সকলে একসাথে কাজ
+করছে এবং সমাজকে একটি সুন্দর ও শান্তিপূর্ণ সমাজ হিসেবে
+গড়ে তোলার চেষ্টা করছে।
+
+</p>
+
+</section>
+
+
+<section class="section">
+
+<h2>👥 আমাদের সদস্য</h2>
+
+<div class="members">
+
+<div class="member"><a href="https://www.facebook.com/share/1AnNDNNVqJ/" target="_blank">MD. Arif Chowdhury</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/18SB6N89Uv/" target="_blank">Turikol Islam Polok</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/14b9wBxhE9c/" target="_blank">MD. Oleulla</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/1AM5rmEQxx/" target="_blank">Jubaidul Islam Laden</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/18TaXg7JUe/" target="_blank">Abu Rayhan Evan</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/1GyBHwNbkT/" target="_blank">Mahdi Hasan Mobin</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/172UNFhcjz/" target="_blank">MD. Shoriful Islam Shorif</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/18TmtyrEPG/" target="_blank">Arifin Bin Shuvo</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/1Fyf4dzjQ9/" target="_blank">Muhammad Ashraful Islam Akib</a></div>
+
+<div class="member"><a href="https://www.facebook.com/share/1CKRYPT6CZ/" target="_blank">Shajahan Khan</a></div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>📢 ঘোষণা</h2>
+
+<div class="posts">
+
+<b>রমজান মাসের কার্যক্রম</b><br>
+রমজান মাসে আমাদের সংগঠন ইফতার বিতরণ ও গরিবদের সাহায্যের
+কার্যক্রম পরিচালনা করবে।
+
+</div>
+
+</section>
+
+
+<section class="section rules">
+
+<h2>📖 ইসলামিক নিয়ম</h2>
+
 <ul>
-<li>সমাজে ধর্মীয় ও সাংস্কৃতিক মিলন ঘটানো</li>
-<li>যুবসমাজকে সঠিক পথে পথপ্রদর্শন করা</li>
-<li>মানুষের মধ্যে সহমর্মিতা, দয়া এবং মানবিক মূল্যবোধ বৃদ্ধি করা</li>
+
+<li>পাঁচ ওয়াক্ত নামাজ আদায় করা।</li>
+<li>নামাজের আগে অজু করা।</li>
+<li>সত্য কথা বলা।</li>
+<li>গরিবদের সাহায্য করা।</li>
+<li>প্রতিবেশীর সাথে ভালো ব্যবহার করা।</li>
+<li>মিথ্যা ও প্রতারণা থেকে দূরে থাকা।</li>
+<li>বয়োজ্যেষ্ঠদের সম্মান করা।</li>
+<li>ছোটদের প্রতি দয়া করা।</li>
+<li>অপচয় না করা।</li>
+<li>পরিষ্কার পরিচ্ছন্ন থাকা।</li>
+<li>ধৈর্য ধারণ করা।</li>
+<li>মানুষের উপকার করা।</li>
+<li>আল্লাহকে স্মরণ করা।</li>
+<li>অন্যের হক নষ্ট না করা।</li>
+<li>সবসময় ভালো কাজ করা।</li>
+
 </ul>
+
 </section>
 
-<section id="committee">
-<h2>আমাদের কমিটি</h2>
-<p>আমাদের কমিটিতে কাকতৈল ও আশেপাশের এলাকার যুবদল, প্রবাসী এবং স্থানীয় বাসীর প্রতিনিধিরা সক্রিয়ভাবে কাজ করছেন।</p>
-<div class="committee-container">
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="MD. Arif Chowdhury">
-    <h3><a href="https://www.facebook.com/share/1AnNDNNVqJ/" target="_blank">MD. Arif Chowdhury</a></h3>
-    <p>President</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Turikol Islam Polok">
-    <h3><a href="https://www.facebook.com/share/18SB6N89Uv/" target="_blank">Turikol Islam Polok</a></h3>
-    <p>Vice President</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="MD. Oleulla">
-    <h3><a href="https://www.facebook.com/share/14b9wBxhE9c/" target="_blank">MD. Oleulla</a></h3>
-    <p>General Secretary</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Jubaidul Islam Laden">
-    <h3><a href="https://www.facebook.com/share/1AM5rmEQxx/" target="_blank">Jubaidul Islam Laden</a></h3>
-    <p>Treasurer</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Abu Rayhan Evan">
-    <h3><a href="https://www.facebook.com/share/18TaXg7JUe/" target="_blank">Abu Rayhan Evan</a></h3>
-    <p>Member</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Mahdi Hasan Mobin">
-    <h3><a href="https://www.facebook.com/share/1GyBHwNbkT/" target="_blank">Mahdi Hasan Mobin</a></h3>
-    <p>Member</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="MD. Shoriful Islam Shorif">
-    <h3><a href="https://www.facebook.com/share/172UNFhcjz/" target="_blank">MD. Shoriful Islam Shorif</a></h3>
-    <p>Member</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Arifin Bin Shuvo">
-    <h3><a href="https://www.facebook.com/share/18TmtyrEPG/" target="_blank">Arifin Bin Shuvo</a></h3>
-    <p>Member</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Muhammad Ashraful Islam Akib">
-    <h3><a href="https://www.facebook.com/share/1Fyf4dzjQ9/" target="_blank">Muhammad Ashraful Islam Akib</a></h3>
-    <p>Member</p>
-  </div>
-  <div class="committee-card">
-    <img src="https://via.placeholder.com/120" alt="Shajahan Khan">
-    <h3><a href="https://www.facebook.com/share/1CKRYPT6CZ/" target="_blank">Shajahan Khan</a></h3>
-    <p>Member</p>
-  </div>
-</div>
-</section>
+<footer>
 
-<section id="events">
-<h2>ইভেন্ট / পোস্ট</h2>
-<div class="event-container">
-  <div class="event-card">
-    <img src="https://via.placeholder.com/400x200" alt="ঈদ-উল-ফিতর উদযাপন">
-    <h4>ঈদ-উল-ফিতর উদযাপন</h4>
-    <p>মসজিদ প্রাঙ্গণে আয়োজন করা হয়েছে ঈদ উদযাপন।</p>
-  </div>
-  <div class="event-card">
-    <img src="https://via.placeholder.com/400x200" alt="রোজা শিক্ষা কর্মশালা">
-    <h4>রোজা শিক্ষা কর্মশালা</h4>
-    <p>কাকতৈল এলাকায় শিশু ও যুব সমাজের জন্য রোজা শিক্ষা কর্মশালা।</p>
-  </div>
-  <div class="event-card">
-    <img src="https://via.placeholder.com/400x200" alt="সামাজিক সচেতনতা সভা">
-    <h4>সামাজিক সচেতনতা সভা</h4>
-    <p>সামাজিক দায়িত্ব ও নাগরিক সচেতনতা বিষয়ক আলোচনা।</p>
-  </div>
-</div>
-</section>
+© 2026 Muslim Cultural Centre Kaktoil
 
-<section id="contact">
-<h2>যোগাযোগ</h2>
-<div class="contact-card">ইমেইল: <a href="mailto:muslimculturalcentrekaktoilbd@gmail.com">muslimculturalcentrekaktoilbd@gmail.com</a></div>
-<div class="contact-card">ফেসবুক: <a href="https://www.facebook.com/profile.php?id=61578645890631" target="_blank">আমাদের ফেসবুক পেইজ</a></div>
-<div class="contact-card">
-<iframe src="https://maps.google.com/maps?q=24.459567,90.740384&z=15&output=embed" width="100%" height="250" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-</section>
+</footer>
 
-<footer>&copy; 2026 Muslim Cultural Centre Kaktoil BD. সর্বস্বত্ব সংরক্ষিত।</footer>
 
-<script src="script.js"></script>
+<script>
+
+function updateClock(){
+
+const now=new Date();
+
+const options={
+timeZone:"Asia/Dhaka",
+hour:"numeric",
+minute:"numeric",
+second:"numeric",
+hour12:true
+};
+
+document.getElementById("clock").innerText=
+now.toLocaleTimeString("en-US",options);
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+
+fetch("https://api.aladhan.com/v1/timingsByCity?city=Kishoreganj&country=Bangladesh&method=1")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+const t=data.data.timings;
+
+document.getElementById("fajr").innerText=t.Fajr;
+document.getElementById("dhuhr").innerText=t.Dhuhr;
+document.getElementById("asr").innerText=t.Asr;
+document.getElementById("maghrib").innerText=t.Maghrib;
+document.getElementById("isha").innerText=t.Isha;
+
+});
+
+</script>
+
 </body>
 </html>
