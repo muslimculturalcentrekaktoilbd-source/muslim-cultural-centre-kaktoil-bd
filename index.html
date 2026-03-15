@@ -17,25 +17,21 @@ color:white;
 }
 
 header{
-background:#065f46;
-padding:30px;
+background:url("https://images.unsplash.com/photo-1584551246679-0daf3d275d0f") center/cover;
+padding:80px 20px;
 text-align:center;
 }
 
 header h1{
-margin:0;
-font-size:34px;
+background:rgba(0,0,0,0.6);
+display:inline-block;
+padding:10px 20px;
+border-radius:10px;
 }
 
 .clock{
-font-size:26px;
+font-size:24px;
 margin-top:10px;
-}
-
-.hijri{
-margin-top:5px;
-font-size:18px;
-color:#a7f3d0;
 }
 
 .section{
@@ -44,30 +40,17 @@ max-width:1100px;
 margin:auto;
 }
 
-h2{
-text-align:center;
-margin-bottom:25px;
-}
-
-.prayers{
+.prayer-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:15px;
 }
 
-.prayer{
+.prayer-box{
 background:#1e293b;
 padding:20px;
 border-radius:10px;
 text-align:center;
-font-size:18px;
-}
-
-.countdown{
-text-align:center;
-font-size:20px;
-margin-top:20px;
-color:#22c55e;
 }
 
 .members{
@@ -86,35 +69,71 @@ text-align:center;
 .member a{
 color:#38bdf8;
 text-decoration:none;
-font-weight:bold;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-}
-
-.posts{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-margin-bottom:15px;
-}
-
-.rules{
-line-height:1.9;
 }
 
 footer{
 background:#020617;
 text-align:center;
 padding:20px;
+}
+
+/* AZAN POPUP */
+
+#azanPopup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:999;
+}
+
+.mosque{
+font-size:90px;
+animation:mosqueMove 2s infinite alternate;
+}
+
+@keyframes mosqueMove{
+from{transform:translateY(0)}
+to{transform:translateY(-15px)}
+}
+
+/* HADITH SLIDER */
+
+.hadith{
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+text-align:center;
+font-size:20px;
+}
+
+/* EVENT */
+
+.event{
+background:#1e293b;
+padding:20px;
+margin-bottom:10px;
+border-radius:10px;
+}
+
+/* MUSIC BUTTON */
+
+.musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#22c55e;
+border:none;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
 }
 
 </style>
@@ -129,41 +148,37 @@ padding:20px;
 
 <div id="clock" class="clock"></div>
 
-<div id="hijri" class="hijri"></div>
+<div id="hijri"></div>
 
 </header>
 
+
 <section class="section">
 
-<h2>🕌 আজকের নামাজের সময়</h2>
+<h2 style="text-align:center">🕌 আজকের নামাজের সময়</h2>
 
-<div class="prayers">
+<div class="prayer-grid">
 
-<div class="prayer">ফজর<br><span id="fajr"></span></div>
-<div class="prayer">যোহর<br><span id="dhuhr"></span></div>
-<div class="prayer">আসর<br><span id="asr"></span></div>
-<div class="prayer">মাগরিব<br><span id="maghrib"></span></div>
-<div class="prayer">ইশা<br><span id="isha"></span></div>
+<div class="prayer-box">ফজর<br><span id="fajr"></span></div>
+<div class="prayer-box">যোহর<br><span id="dhuhr"></span></div>
+<div class="prayer-box">আসর<br><span id="asr"></span></div>
+<div class="prayer-box">মাগরিব<br><span id="maghrib"></span></div>
+<div class="prayer-box">ইশা<br><span id="isha"></span></div>
 
 </div>
 
-<div id="countdown" class="countdown"></div>
-
 </section>
 
 
 <section class="section">
 
-<h2>📍 আমাদের লোকেশন</h2>
+<h2 style="text-align:center">🌙 রমজান কাউন্টডাউন</h2>
+
+<p id="ramadan" style="text-align:center"></p>
 
 <p style="text-align:center">
-
-কাকতৈল, বাংলাদেশ<br>
-
-<a href="https://maps.google.com/?q=24.459567,90.740384" target="_blank" style="color:#22c55e">
-Google Map এ দেখুন
-</a>
-
+সেহরি শেষ: <span id="sehri"></span><br>
+ইফতার: <span id="iftar"></span>
 </p>
 
 </section>
@@ -171,100 +186,44 @@ Google Map এ দেখুন
 
 <section class="section">
 
-<h2>🤝 আমাদের উদ্দেশ্য</h2>
+<h2 style="text-align:center">📜 হাদিস</h2>
 
-<p>
+<div class="hadith" id="hadithSlider">
 
-Muslim Cultural Centre Kaktoil একটি সামাজিক ও ইসলামিক সংগঠন।
-আমাদের উদ্দেশ্য হচ্ছে ইসলামের সুন্দর শিক্ষা সমাজে ছড়িয়ে দেওয়া
-এবং মানুষের মধ্যে ভ্রাতৃত্ব, সহযোগিতা ও একতাবদ্ধতা সৃষ্টি করা।
+"তোমাদের মধ্যে সেই ব্যক্তি উত্তম, যে তার চরিত্রে উত্তম।"
 
-আমরা বিশ্বাস করি একটি সুন্দর সমাজ গড়ে ওঠে তখনই যখন
-মানুষ একে অপরের পাশে দাঁড়ায়। তাই আমরা গরিব ও অসহায়দের
-সহযোগিতা করা, প্রতিবেশীদের পাশে দাঁড়ানো, সামাজিক কাজ করা
-এবং ইসলামের আলো মানুষের মাঝে ছড়িয়ে দেওয়ার জন্য কাজ
-করে যাচ্ছি।
-
-এই উদ্যোগে যুবদল, প্রবাসী ও এলাকাবাসী সকলে একসাথে কাজ
-করছে এবং সমাজকে একটি সুন্দর ও শান্তিপূর্ণ সমাজ হিসেবে
-গড়ে তোলার চেষ্টা করছে।
-
-</p>
+</div>
 
 </section>
 
 
 <section class="section">
 
-<h2>👥 আমাদের সদস্য</h2>
+<h2 style="text-align:center">📅 মসজিদের লাইভ ইভেন্ট</h2>
+
+<div class="event">🕌 জুমার নামাজ — শুক্রবার</div>
+<div class="event">📖 কুরআন শিক্ষা ক্লাস — শনিবার</div>
+<div class="event">🤲 দোয়া মাহফিল — প্রতি মাসে</div>
+
+</section>
+
+
+<section class="section">
+
+<h2 style="text-align:center">👥 আমাদের সদস্য</h2>
 
 <div class="members">
 
-<div class="member"><a href="https://www.facebook.com/share/1AnNDNNVqJ/" target="_blank">MD. Arif Chowdhury</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/18SB6N89Uv/" target="_blank">Turikol Islam Polok</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/14b9wBxhE9c/" target="_blank">MD. Oleulla</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/1AM5rmEQxx/" target="_blank">Jubaidul Islam Laden</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/18TaXg7JUe/" target="_blank">Abu Rayhan Evan</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/1GyBHwNbkT/" target="_blank">Mahdi Hasan Mobin</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/172UNFhcjz/" target="_blank">MD. Shoriful Islam Shorif</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/18TmtyrEPG/" target="_blank">Arifin Bin Shuvo</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/1Fyf4dzjQ9/" target="_blank">Muhammad Ashraful Islam Akib</a></div>
-
-<div class="member"><a href="https://www.facebook.com/share/1CKRYPT6CZ/" target="_blank">Shajahan Khan</a></div>
+<div class="member"><a href="https://www.facebook.com/share/1AnNDNNVqJ/">MD. Arif Chowdhury</a></div>
+<div class="member"><a href="https://www.facebook.com/share/18SB6N89Uv/">Turikol Islam Polok</a></div>
+<div class="member"><a href="https://www.facebook.com/share/14b9wBxhE9c/">MD. Oleulla</a></div>
+<div class="member"><a href="https://www.facebook.com/share/1AM5rmEQxx/">Jubaidul Islam Laden</a></div>
+<div class="member"><a href="https://www.facebook.com/share/18TaXg7JUe/">Abu Rayhan Evan</a></div>
 
 </div>
 
 </section>
 
-
-<section class="section">
-
-<h2>📢 ঘোষণা</h2>
-
-<div class="posts">
-
-<b>রমজান মাসের কার্যক্রম</b><br>
-রমজান মাসে আমাদের সংগঠন ইফতার বিতরণ ও গরিবদের সাহায্যের
-কার্যক্রম পরিচালনা করবে।
-
-</div>
-
-</section>
-
-
-<section class="section rules">
-
-<h2>📖 ইসলামিক নিয়ম</h2>
-
-<ul>
-
-<li>পাঁচ ওয়াক্ত নামাজ আদায় করা।</li>
-<li>নামাজের আগে অজু করা।</li>
-<li>সত্য কথা বলা।</li>
-<li>গরিবদের সাহায্য করা।</li>
-<li>প্রতিবেশীর সাথে ভালো ব্যবহার করা।</li>
-<li>মিথ্যা ও প্রতারণা থেকে দূরে থাকা।</li>
-<li>বয়োজ্যেষ্ঠদের সম্মান করা।</li>
-<li>ছোটদের প্রতি দয়া করা।</li>
-<li>অপচয় না করা।</li>
-<li>পরিষ্কার পরিচ্ছন্ন থাকা।</li>
-<li>ধৈর্য ধারণ করা।</li>
-<li>মানুষের উপকার করা।</li>
-<li>আল্লাহকে স্মরণ করা।</li>
-<li>অন্যের হক নষ্ট না করা।</li>
-<li>সবসময় ভালো কাজ করা।</li>
-
-</ul>
-
-</section>
 
 <footer>
 
@@ -273,28 +232,36 @@ Muslim Cultural Centre Kaktoil একটি সামাজিক ও ইসল�
 </footer>
 
 
+<div id="azanPopup">
+
+<div class="mosque">🕌</div>
+
+<h1>নামাজের সময় হয়েছে</h1>
+
+</div>
+
+
+<audio id="azan" src="https://cdn.islamic.network/quran/audio/128/ar.alafasy/1.mp3"></audio>
+
+<audio id="nasheed" loop
+src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5a4b0e2c3a.mp3"></audio>
+
+<button class="musicBtn" onclick="toggleMusic()">🎵</button>
+
+
 <script>
 
 function updateClock(){
 
 const now=new Date();
 
-const options={
-timeZone:"Asia/Dhaka",
-hour:"numeric",
-minute:"numeric",
-second:"numeric",
-hour12:true
-};
-
 document.getElementById("clock").innerText=
-now.toLocaleTimeString("en-US",options);
+now.toLocaleTimeString("en-US",{hour12:true});
 
 }
 
 setInterval(updateClock,1000);
 
-updateClock();
 
 
 fetch("https://api.aladhan.com/v1/timingsByCity?city=Kishoreganj&country=Bangladesh&method=1")
@@ -311,7 +278,76 @@ document.getElementById("asr").innerText=t.Asr;
 document.getElementById("maghrib").innerText=t.Maghrib;
 document.getElementById("isha").innerText=t.Isha;
 
+document.getElementById("sehri").innerText=t.Fajr;
+document.getElementById("iftar").innerText=t.Maghrib;
+
 });
+
+
+
+const hadiths=[
+
+"তোমাদের মধ্যে সেই ব্যক্তি উত্তম, যে তার চরিত্রে উত্তম।",
+
+"যে আল্লাহর জন্য ভালোবাসে, আল্লাহর জন্য ঘৃণা করে, সে পূর্ণ ঈমানদার।",
+
+"পরিচ্ছন্নতা ঈমানের অর্ধেক।",
+
+"মানুষের মাঝে উত্তম সেই ব্যক্তি, যে মানুষের উপকার করে।"
+
+];
+
+let i=0;
+
+function hadithSlider(){
+
+i++;
+
+if(i>=hadiths.length) i=0;
+
+document.getElementById("hadithSlider").innerText=hadiths[i];
+
+}
+
+setInterval(hadithSlider,5000);
+
+
+
+function toggleMusic(){
+
+let music=document.getElementById("nasheed");
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
+}
+
+
+
+const ramadanDate=new Date("2026-02-18");
+
+function ramadanCountdown(){
+
+const now=new Date();
+
+const diff=ramadanDate-now;
+
+const days=Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("ramadan").innerText=
+
+"রমজান শুরু হতে বাকি "+days+" দিন";
+
+}
+
+setInterval(ramadanCountdown,1000);
 
 </script>
 
